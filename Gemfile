@@ -57,10 +57,12 @@ group :development, :test do
   gem 'debug', platforms: %i[mri windows]
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'pry', '~> 0.14.2'
   gem 'rspec-rails'
   gem 'rswag-specs'
   gem 'rubocop', require: false
-  gem "pry", "~> 0.14.2"
+  gem 'rubocop-rails', '~> 2.26'
+  gem 'shoulda-matchers', '~> 6.4'
 end
 
 group :development do
@@ -78,4 +80,3 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
 end
-

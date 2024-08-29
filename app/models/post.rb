@@ -4,7 +4,7 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :likes, dependent: :destroy
 
-  validates_presence_of :title, :content
+  validates :title, :content, presence: true
 
   def like_count
     likes.count
