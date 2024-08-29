@@ -1,0 +1,32 @@
+<div class="container mt-5">
+  <% if notice %>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <%= notice %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  <% end %>
+
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="display-4">Blog Posts</h1>
+    <%= link_to "Create New Post", new_post_path, class: "btn btn-success" %>
+  </div>
+
+  <div id="posts" class="row row-cols-1 row-cols-md-2 g-4">
+    <% @posts.each do |post| %>
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <%= render post %>
+          <div class="card-footer bg-transparent border-top-0">
+            <%= link_to "Read More", post, class: "btn btn-outline-primary btn-sm" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <% if @posts.empty? %>
+    <div class="alert alert-info mt-4" role="alert">
+      No posts available. Be the first to create a post!
+    </div>
+  <% end %>
+</div>

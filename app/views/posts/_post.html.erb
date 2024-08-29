@@ -1,0 +1,14 @@
+<div id="<%= dom_id post %>" class="card mb-3 shadow-sm">
+  <div class="card-body">
+    <h5 class="card-title fw-bold"><%= post.title %></h5>
+    <p class="card-text text-muted"><%= truncate(post.content, length: 150) %></p>
+  </div>
+  <div class="card-footer bg-light d-flex justify-content-between align-items-center">
+    <small class="text-muted">
+      <i class="bi bi-person-circle me-1"></i> <%= post.user.email %>
+    </small>
+    <span class="badge bg-primary rounded-pill">
+      <i class="bi bi-heart-fill me-1"></i> <%= post.like_count %>
+    </span>
+  </div>
+</div>
